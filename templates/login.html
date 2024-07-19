@@ -1,0 +1,9 @@
+{% include 'navbar.html' %} 
+{% load static %}
+
+<h1>Login</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Login</button>
+</form>
