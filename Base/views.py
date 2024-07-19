@@ -13,7 +13,7 @@ def projects(request):
 def contact(request): 
 	return render(request, "contact.html")
 
-def login_123(request):
+def login_112(request):
 	if request.method == 'POST':
   
         # AuthenticationForm_can_also_be_used__
@@ -21,12 +21,12 @@ def login_123(request):
 		password = request.POST['password']
 		print("username is ",username," password is ",password)
 		user = authenticate(request, username = username, password = password)
-		form_123=None
+		form_112=None
 		if user is not None:
-			form_123 = login(request, user)
+			form_112 = login(request, user)
 			messages.success(request, f' welcome {username} !!')
 			return redirect('home')
 		else:
 			messages.info(request, f'account done not exit plz sign in')
-	form_123 = AuthenticationForm()
-	return render(request, 'login.html', {'form':form_123,'title':"Login form"})
+	form_112 = AuthenticationForm()
+	return render(request, 'login.html', {'form':form_112,'title':"Login form"})
